@@ -1,0 +1,7 @@
+<h1>Click List To View Options</h1>
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, [@board, list] %></li>
+  <% end %>
+</ul>
+<%= link_to 'Create New List', new_board_list_path(@board), class: "ui blue button" %>

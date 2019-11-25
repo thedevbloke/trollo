@@ -1,0 +1,7 @@
+<h1>Click Board To View Options</h1>
+<ul>
+  <% @boards.each do |board| %>
+    <li><%= link_to board.name, board %></li>
+  <% end %>
+</ul>
+<%= link_to 'Create New Board', new_board_path, class: "ui blue button" %>

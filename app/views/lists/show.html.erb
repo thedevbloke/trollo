@@ -1,0 +1,16 @@
+<h4>Board Title: <%= @board.name %></h4>
+<h2>List Title: <%= @list.name %></h2>
+<br />
+<% @list.tasks.each do |task| %>
+  <%= render 'tasks/task', { task: task } %>
+<% end %>
+<br />
+<%= link_to 'Add A Task', new_list_task_path(@list), class: "ui blue button" %>
+<br />
+<%= link_to 'Edit List', edit_board_list_path([@board, @list]), class: "ui purple button" %>
+<br />
+<%= link_to 'Delete List', [@board, @list], method: :delete, class: "ui red button" %>
+<br />
+<%= link_to 'Back To Lists', board_lists_path(@board), class: "ui yellow button" %>
+<br />
+
